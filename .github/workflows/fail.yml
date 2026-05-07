@@ -1,0 +1,17 @@
+name: AI Failure Demo
+
+on:
+  push:
+
+jobs:
+  fail-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Intentional Failure
+        run: |
+          echo "Starting build"
+          invalid-command-demo
